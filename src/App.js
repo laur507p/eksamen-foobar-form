@@ -1,17 +1,26 @@
+import React from "react";
+
+import Form from "./components/Form";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
+    <main>
+      <section className="screen" id="screen1"></section>
+      <section className="screen" id="screen2"></section>
+      <section className="screen" id="screen3">
+        <Form />
+        <a href="#screen4" onClick={nextScreen}>
+          Next screen
         </a>
-      </header>
-    </div>
+      </section>
+
+      <section className="screen" id="screen4"></section>
+    </main>
   );
+
+  function nextScreen() {
+    // ??????
+  }
 }
 
 export default App;
