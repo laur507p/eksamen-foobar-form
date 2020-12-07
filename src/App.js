@@ -1,26 +1,19 @@
 import React from "react";
 
-import Form from "./components/Form";
+import FormPage from "./components/FormPage";
+import LandingPage from "./components/LandingPage";
+import Beers from "./components/Beers";
+import Confirmation from "./components/Confirmation";
 
 function App() {
   return (
     <main>
-      <section className="screen" id="screen1"></section>
-      <section className="screen" id="screen2"></section>
-      <section className="screen" id="screen3">
-        <Form />
-        <a href="#screen4" onClick={nextScreen}>
-          Next screen
-        </a>
-      </section>
-
-      <section className="screen" id="screen4"></section>
+      <LandingPage />
+      <Beers />
+      <FormPage />
+      <Confirmation />
     </main>
   );
-
-  function nextScreen() {
-    // ??????
-  }
 }
 
 export default App;

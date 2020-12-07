@@ -76,6 +76,13 @@ input[type="email"] {
 
 #screen1 {
   background-color: lightgreen;
+  border-right: 1px solid white;
+  padding: 1rem;
+  min-width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  text-align: center;
+  position: relative;
 }
 #screen2 {
   background-color: pink;
@@ -92,10 +99,10 @@ body {
 }
 
 main {
-  scroll-snap-type: x mandatory;
+  /* scroll-snap-type: x mandatory; */
   display: flex;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: scroll;
+  /* -webkit-overflow-scrolling: touch; */
+  overflow-x: hidden;
 }
 
 .screen {
@@ -106,4 +113,15 @@ main {
   scroll-snap-align: start;
   text-align: center;
   position: relative;
+  transition: all 1s ease;
+}
+
+.slide-left {
+  animation: slide-leftkf 5s linear 1 both;
+}
+
+@keyframes slide-leftkf {
+  100% {
+    transform: translateX(-100vw);
+  }
 }
