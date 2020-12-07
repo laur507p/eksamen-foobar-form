@@ -4,7 +4,6 @@ import FormPage from "./components/FormPage";
 import LandingPage from "./components/LandingPage";
 import Beers from "./components/Beers";
 import Confirmation from "./components/Confirmation";
-import "./App.scss";
 
 function App() {
   return (
