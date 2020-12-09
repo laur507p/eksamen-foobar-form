@@ -1,0 +1,24 @@
+// header
+
+#top-header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100vw;
+  background-color: blue;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+}
+
+#top-spacer {
+  height: 50px;
+  z-index: 10000;
+}
+
+#main-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: aqua;
+}

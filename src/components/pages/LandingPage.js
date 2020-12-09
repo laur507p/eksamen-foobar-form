@@ -9,8 +9,10 @@ export default function LandingPage() {
   };
 
   return (
-    <section className={isClicked === true ? "slide-left" : "none"} id="screen1">
-      <a href="#screen2">Next</a>
+    <section className="screen" id="screen1">
+      <a href="#screen2" className="testbutton">
+        Next
+      </a>
     </section>
   );
   function nextScreen() {
@@ -18,5 +20,5 @@ export default function LandingPage() {
     document.querySelector("#screen1").setAttribute("className", "slide-left");
   }
 }
-
+//className={isClicked === true ? "slide-left" : "none"}
 // onClick={onButtonClick}
