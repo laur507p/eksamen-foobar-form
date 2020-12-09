@@ -5,22 +5,22 @@ import React, { Component } from "react";
         {
           name: "El Hefe",
           description: "The perfect beer",
-          price: "65.0",
+          price: 65,
         },
         {
           name: "Ruined Childhood",
           description: "I cry",
-          price: "60.0",
+          price: 60,
         },
         {
           name: "Githop",
           description: "Nerd alert",
-          price: "65.0",
+          price: 65,
         },
         {
           name: "Mowintime",
           description: "Give me some soul sistah",
-          price: "65.0",
+          price: 65,
         },
        
       
@@ -57,7 +57,7 @@ import React, { Component } from "react";
       }
       
       getTotal = () => {
-        const total = this.state.cart.reduce((totalCost, item) => totalCost + item.price, 0);
+        const total = this.state.cart.reduce((totalCost, item) => totalCost + item.price,0);
         return total.toLocaleString(undefined, this.currencyOptions)
       }
       
