@@ -79,20 +79,21 @@ body {
 }
 
 #content-wrapper {
-  /* scroll-snap-type: x mandatory; */
+  scroll-snap-type: x mandatory;
   display: flex;
-  /* -webkit-overflow-scrolling: touch; */
-  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
 }
 
 .screen {
   border-right: 1px solid white;
   padding: 1rem;
   min-width: 100vw;
-  height: auto;
+  height: 90vh;
   text-align: center;
   position: relative;
   transition: all 1s ease;
+  scroll-snap-align: center;
 }
 
 .testbutton {

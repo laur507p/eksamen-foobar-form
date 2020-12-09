@@ -1,15 +1,12 @@
 // header
 
 #top-header {
-  position: fixed;
   display: flex;
   justify-content: space-between;
   height: 50px;
   width: 100vw;
   background-color: blue;
   z-index: 10000;
-  top: 0;
-  left: 0;
 }
 
 #top-spacer {

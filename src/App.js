@@ -37,7 +37,7 @@ function App() {
           {currentDay} {currentTime}
         </p>
       </header>
-      <div id="top-spacer"></div>
+      {/* <div id="top-spacer"></div> */}
 
       <div id="content-wrapper">
         <LandingPage />
