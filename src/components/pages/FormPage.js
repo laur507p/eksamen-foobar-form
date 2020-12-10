@@ -17,7 +17,7 @@ export default function FormPage() {
     out: {
       opacity: 0,
       x: "100vw",
-      scale: 1.1,
+      scale: 1.2,
     },
   };
 
@@ -27,7 +27,16 @@ export default function FormPage() {
     duration: 1,
   };
   return (
-    <motion.section exit="out" animate="in" initial="initial" variants={pageVariants} transition={pageTransition} className="screen" id="form">
+    <motion.section
+      style={{ position: "absolute" }}
+      exit="out"
+      animate="in"
+      initial="initial"
+      variants={pageVariants}
+      transition={pageTransition}
+      className="screen"
+      id="form"
+    >
       <a href="#screen4" className="testbutton">
         Next
       </a>

@@ -5,7 +5,7 @@ export default function Confirmation() {
   const pageVariants = {
     initial: {
       opacity: 0,
-      x: "-100vw",
+      x: "-100vh",
       scale: 0.8,
     },
     in: {
@@ -15,8 +15,8 @@ export default function Confirmation() {
     },
     out: {
       opacity: 0,
-      x: "100vw",
-      scale: 1.1,
+      x: "100vh",
+      scale: 1.2,
     },
   };
 
@@ -26,7 +26,16 @@ export default function Confirmation() {
     duration: 1,
   };
   return (
-    <motion.section initial="initial" exit="out" animate="in" variants={pageVariants} transition={pageTransition} className="screen" id="screen4">
+    <motion.section
+      style={{ position: "absolute" }}
+      initial="initial"
+      exit="out"
+      animate="in"
+      variants={pageVariants}
+      transition={pageTransition}
+      className="screen"
+      id="screen4"
+    >
       <h1>Confirmation</h1>
     </motion.section>
   );

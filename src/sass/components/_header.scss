@@ -14,7 +14,7 @@
   z-index: 10000;
 }
 
-// #main-wrapper {
-//   display: inline-block;
-//   place-items: center;
-// }
+#main-wrapper {
+  position: relative;
+  place-items: center;
+}

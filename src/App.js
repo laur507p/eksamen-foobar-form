@@ -46,7 +46,7 @@ function App() {
         </p>
       </header>
       <ProgressBar />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact component={LandingPage} />
           <Route path="/beers" component={Beers} />
