@@ -6,8 +6,8 @@ export default function FormPage() {
   const pageVariants = {
     initial: {
       opacity: 0,
-      x: "-100vw",
-      scale: 0.8,
+      x: "100vh",
+      scale: 1.2,
     },
     in: {
       opacity: 1,
@@ -16,8 +16,8 @@ export default function FormPage() {
     },
     out: {
       opacity: 0,
-      x: "100vw",
-      scale: 1.2,
+      x: "-100vh",
+      scale: 0.8,
     },
   };
 

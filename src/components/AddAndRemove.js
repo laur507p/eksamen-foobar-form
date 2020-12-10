@@ -5,7 +5,6 @@ import React, { useState } from "react";
 export default function AddAndRemove(props) {
   const [number, setNumber] = useState(0);
   const [total, setTotal] = useState(0);
-  const currentOrder = [];
 
   function subtract() {
     if (number > 0) {

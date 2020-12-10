@@ -5,8 +5,8 @@ export default function Confirmation() {
   const pageVariants = {
     initial: {
       opacity: 0,
-      x: "-100vh",
-      scale: 0.8,
+      x: "100vh",
+      scale: 1.2,
     },
     in: {
       opacity: 1,
@@ -15,8 +15,8 @@ export default function Confirmation() {
     },
     out: {
       opacity: 0,
-      x: "100vh",
-      scale: 1.2,
+      x: "-100vh",
+      scale: 0.8,
     },
   };
 
@@ -34,7 +34,6 @@ export default function Confirmation() {
       variants={pageVariants}
       transition={pageTransition}
       className="screen"
-      id="screen4"
     >
       <h1>Confirmation</h1>
     </motion.section>

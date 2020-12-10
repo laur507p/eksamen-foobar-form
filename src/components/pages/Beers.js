@@ -1,8 +1,33 @@
-import React from "react";
-import AddAndRemove from "../AddAndRemove";
-import GetTotal from "../GetTotal";
+import React, { useState } from "react";
+// import AddAndRemove from "../AddAndRemove";
+// import GetTotal from "../GetTotal";
+import { motion } from "framer-motion";
 
 function BeersList() {
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      x: "100vh",
+      scale: 1.2,
+    },
+    in: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+    },
+    out: {
+      opacity: 0,
+      x: "-100vh",
+      scale: 0.8,
+    },
+  };
+
+  const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 1,
+  };
+
   const Beers = [
     {
       id: "1",
@@ -30,11 +55,18 @@ function BeersList() {
     },
   ];
 
+  const [total, setTotal] = useState(0);
+
   return (
-    <section className="screen" id="screen2">
-      <a href="#screen3" className="testbutton">
-        Next
-      </a>
+    <motion.section
+      style={{ position: "absolute" }}
+      initial="initial"
+      exit="out"
+      animate="in"
+      variants={pageVariants}
+      transition={pageTransition}
+      className="screen"
+    >
       <ul>
         {Beers.map((data) => (
           <li key={data.id}>
@@ -44,9 +76,34 @@ function BeersList() {
           </li>
         ))}
       </ul>
-      <GetTotal />
-    </section>
+      <p>{total}</p>
+      {/* <GetTotal /> */}
+    </motion.section>
   );
+
+  function AddAndRemove(props) {
+    const [number, setNumber] = useState(0);
+
+    function subtract() {
+      if (number > 0) {
+        setNumber(number - 1);
+        setTotal(total - props.price);
+      }
+    }
+
+    function add() {
+      setNumber(number + 1);
+      setTotal(total + props.price);
+    }
+
+    return (
+      <div>
+        <button onClick={subtract}>-</button>
+        {number}
+        <button onClick={add}>+</button>
+      </div>
+    );
+  }
 }
 
 export default BeersList;
