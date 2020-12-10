@@ -13,6 +13,7 @@ export default function LandingPage() {
       <a href="#screen2" className="testbutton">
         Next
       </a>
+      <h1>Landing page</h1>
     </section>
   );
   function nextScreen() {
