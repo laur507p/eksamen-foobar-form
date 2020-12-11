@@ -26,8 +26,23 @@ export default function FormPage() {
     ease: "anticipate",
     duration: 1,
   };
+
+  // current order to submit with form!
+  const currentCart = localStorage.getItem("currentCart");
+  const cartArray = JSON.parse(currentCart);
+  console.log(cartArray);
+
   return (
-    <motion.section style={{ position: "absolute" }} exit="out" animate="in" initial="initial" variants={pageVariants} transition={pageTransition} className="screen" id="form">
+    <motion.section
+      style={{ position: "absolute" }}
+      exit="out"
+      animate="in"
+      initial="initial"
+      variants={pageVariants}
+      transition={pageTransition}
+      className="screen"
+      id="form"
+    >
       <a href="#screen4" className="testbutton">
         Next
       </a>
