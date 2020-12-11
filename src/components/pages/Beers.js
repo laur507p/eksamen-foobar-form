@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import AddAndRemove from "../AddAndRemove";
-// import GetTotal from "../GetTotal";
+import AddAndRemove from "../AddAndRemove";
 import { motion } from "framer-motion";
 
 function BeersList() {
@@ -54,8 +53,40 @@ function BeersList() {
       price: 65,
     },
   ];
-
+  const tempCart = Beers.map((beer) => {
+    return {
+      name: beer.name,
+      amount: 0,
+    };
+  });
   const [total, setTotal] = useState(0);
+  const [cart, setCart] = useState(tempCart);
+
+  function addToCart(beer) {
+    console.log(beer);
+    const nextCart = cart.map((item) => {
+      if (item.name === beer) {
+        console.log("fandt øl");
+        item.amount = item.amount + 1;
+      }
+      return item;
+    });
+    console.log(nextCart);
+    setCart(nextCart);
+  }
+
+  function removeFromCart(beer) {
+    console.log(beer);
+    const nextCart = cart.map((item) => {
+      if (item.name === beer) {
+        console.log("minus øl");
+        item.amount = item.amount - 1;
+      }
+      return item;
+    });
+    console.log(nextCart);
+    setCart(nextCart);
+  }
 
   return (
     <motion.section
@@ -72,38 +103,22 @@ function BeersList() {
           <li key={data.id}>
             <p>{data.name}</p>
             <p>{data.price}</p>
-            <AddAndRemove price={data.price} />
+            <AddAndRemove
+              price={data.price}
+              total={total}
+              setTotal={setTotal}
+              beer={data.name}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+            />
           </li>
         ))}
       </ul>
-      <p>{total}</p>
+      <p>Total: {total}</p>
+
       {/* <GetTotal /> */}
     </motion.section>
   );
-
-  function AddAndRemove(props) {
-    const [number, setNumber] = useState(0);
-
-    function subtract() {
-      if (number > 0) {
-        setNumber(number - 1);
-        setTotal(total - props.price);
-      }
-    }
-
-    function add() {
-      setNumber(number + 1);
-      setTotal(total + props.price);
-    }
-
-    return (
-      <div>
-        <button onClick={subtract}>-</button>
-        {number}
-        <button onClick={add}>+</button>
-      </div>
-    );
-  }
 }
 
 export default BeersList;

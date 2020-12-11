@@ -6,6 +6,6 @@ export default function GetTotal(props){
 
 
     return (
-    <p>Total:</p>
+    <p>Total: {total}</p>
     )
 }
