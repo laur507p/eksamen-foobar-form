@@ -7,14 +7,14 @@ export default function Main() {
       <h1>Customer information</h1>
       <label>First Name</label>
       <FormField name="firstname" placeholder="First Name" type="text" id="firstname" />
-      
+
       <label>Last name</label>
       <FormField name="lastname" placeholder="Last Name" type="text" id="lastname" />
-      
+
       <label>Email</label>
       <div className="hint">A receipt will be sent to your email.</div>
       <FormField name="email" placeholder="Email" type="text" id="email" />
-      
+
       <label>Table number </label>
       <div className="hint">You can find your tablenumber on the sign at the end of the table.</div>
       {/* <FormField name="tablenumber" placeholder="Table number" type="number" id="tablenumber" /> */}
@@ -33,15 +33,13 @@ export default function Main() {
 
       <h1>Payment information</h1>
       <label>Card number</label>
-      <FormField name="cardnumber" placeholder="0000 0000 0000 0000" type="number" id="cardnumber"/>
-      
+      <FormField name="cardnumber" placeholder="0000 0000 0000 0000" type="text" id="cardnumber" maxLength="16" />
+
       <label>mm/yy</label>
-      <FormField name="expiration_date" placeholder="12/20" type="number" id="expiration_date"/>
+      <FormField name="expiration_date" placeholder="12/20" type="text" id="expiration_date" maxLength="4" />
 
       <label>cvc</label>
-      <FormField name="cvc" placeholder="111" type="number" id="cvc"/>
-     
+      <FormField name="cvc" placeholder="111" type="text" id="cvc" maxLength="3" />
     </form>
-    
   );
 }
