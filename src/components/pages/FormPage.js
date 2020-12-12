@@ -26,8 +26,18 @@ export default function FormPage() {
     ease: "anticipate",
     duration: 1,
   };
+
   return (
-    <motion.section style={{ position: "absolute" }} exit="out" animate="in" initial="initial" variants={pageVariants} transition={pageTransition} className="screen" id="form">
+    <motion.section
+      style={{ position: "absolute" }}
+      exit="out"
+      animate="in"
+      initial="initial"
+      variants={pageVariants}
+      transition={pageTransition}
+      className="screen"
+      id="form"
+    >
       <a href="#screen4" className="testbutton">
         Next
       </a>

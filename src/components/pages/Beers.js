@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import AddAndRemove from "../AddAndRemove";
+// import Cart from "../Cart";
 import { motion } from "framer-motion";
 
 function BeersList() {
@@ -87,6 +88,18 @@ function BeersList() {
     console.log(nextCart);
     setCart(nextCart);
   }
+  function submitOrder() {
+    console.log("submitOrder");
+    const nextCart = cart.map((item) => {
+      if (item.amount > 0) {
+        console.log("filtreret øl", item.name, "x", item.amount);
+      }
+      return item;
+    });
+    // console.log(nextCart);
+    setCart(nextCart);
+    // post(nextCart);
+  }
 
   return (
     <motion.section
@@ -115,6 +128,12 @@ function BeersList() {
         ))}
       </ul>
       <p>Total: {total}</p>
+      <button onClick={submitOrder}>Continue</button>
+      <Cart
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+        beer={data.name}
+      />
 
       {/* <GetTotal /> */}
     </motion.section>
