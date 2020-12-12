@@ -34,6 +34,8 @@ function App() {
   } else if (day === 7) {
     currentDay = "Sun";
   }
+
+  // animation settings that are sent down to the 4 pages
   const pageVariants = {
     initial: {
       opacity: 0,
@@ -58,6 +60,7 @@ function App() {
     duration: 1,
   };
 
+  // location used for the animation
   const location = useLocation();
 
   return (
@@ -69,11 +72,12 @@ function App() {
         </p>
       </header>
       <ProgressBar />
+
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact render={(props) => <LandingPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
           <Route path="/beers" render={(props) => <Beers {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
-          <Route path="/form" render={(props) => <FormPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
+          <Route path="/payment" render={(props) => <FormPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
           <Route path="/confirmation" render={(props) => <Confirmation {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
         </Switch>
       </AnimatePresence>

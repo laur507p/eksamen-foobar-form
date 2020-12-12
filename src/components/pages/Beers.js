@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddAndRemove from "../AddAndRemove";
-// import Cart from "../Cart";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 function BeersList(props) {
@@ -36,6 +36,7 @@ function BeersList(props) {
       amount: 0,
     };
   });
+
   const [total, setTotal] = useState(0);
   const [cart, setCart] = useState(tempCart);
 
@@ -49,9 +50,8 @@ function BeersList(props) {
       }
       return item;
     });
-    console.log(nextCart);
+
     setCart(nextCart);
-    localStorage.setItem("currentCart", JSON.stringify(cart));
   }
 
   function removeFromCart(beer) {
@@ -64,9 +64,8 @@ function BeersList(props) {
       }
       return item;
     });
-    console.log(nextCart);
+
     setCart(nextCart);
-    localStorage.setItem("currentCart", JSON.stringify(cart));
   }
   function submitOrder() {
     console.log("submitOrder");
@@ -76,8 +75,10 @@ function BeersList(props) {
       }
       return item;
     });
-    // console.log(nextCart);
+
     setCart(nextCart);
+    // store the current order in localstorage
+    localStorage.setItem("currentCart", JSON.stringify(nextCart));
     // post(nextCart);
   }
 
@@ -108,7 +109,10 @@ function BeersList(props) {
         ))}
       </ul>
       <p>Total: {total}</p>
-      <button onClick={submitOrder}>Continue</button>
+      {/* <button onClick={submitOrder}>Continue</button> */}
+      <Link onClick={submitOrder} to="/payment">
+        TO PAYMENT
+      </Link>
       {/* <Cart addToCart={addToCart} removeFromCart={removeFromCart} beer={data.name} /> */}
     </motion.section>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function LandingPage(props) {
   return (
@@ -12,9 +13,7 @@ export default function LandingPage(props) {
       transition={props.pageTransition}
       className="screen"
     >
-      <a href="#screen2" className="testbutton">
-        Next
-      </a>
+      <Link to="/beers">GET STARTED</Link>
       <h1>Landing page</h1>
     </motion.section>
   );
