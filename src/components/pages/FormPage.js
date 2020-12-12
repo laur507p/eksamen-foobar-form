@@ -2,30 +2,11 @@ import React from "react";
 import Form from "../Form";
 import { motion } from "framer-motion";
 
-export default function FormPage() {
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-      x: "100vh",
-      scale: 1.2,
-    },
-    in: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-    },
-    out: {
-      opacity: 0,
-      x: "-100vh",
-      scale: 0.8,
-    },
-  };
-
-  const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
-    duration: 1,
-  };
+export default function FormPage(props) {
+  // current order to submit with form!
+  const currentCart = localStorage.getItem("currentCart");
+  const cartArray = JSON.parse(currentCart);
+  console.log(cartArray);
 
   return (
     <motion.section
@@ -33,8 +14,8 @@ export default function FormPage() {
       exit="out"
       animate="in"
       initial="initial"
-      variants={pageVariants}
-      transition={pageTransition}
+      variants={props.pageVariants}
+      transition={props.pageTransition}
       className="screen"
       id="form"
     >

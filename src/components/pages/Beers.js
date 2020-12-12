@@ -3,31 +3,7 @@ import AddAndRemove from "../AddAndRemove";
 // import Cart from "../Cart";
 import { motion } from "framer-motion";
 
-function BeersList() {
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-      x: "100vh",
-      scale: 1.2,
-    },
-    in: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-    },
-    out: {
-      opacity: 0,
-      x: "-100vh",
-      scale: 0.8,
-    },
-  };
-
-  const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
-    duration: 1,
-  };
-
+function BeersList(props) {
   const Beers = [
     {
       id: "1",
@@ -111,8 +87,8 @@ function BeersList() {
       initial="initial"
       exit="out"
       animate="in"
-      variants={pageVariants}
-      transition={pageTransition}
+      variants={props.pageVariants}
+      transition={props.pageTransition}
       className="screen"
     >
       <ul>
@@ -133,13 +109,7 @@ function BeersList() {
       </ul>
       <p>Total: {total}</p>
       <button onClick={submitOrder}>Continue</button>
-      <Cart
-        addToCart={addToCart}
-        removeFromCart={removeFromCart}
-        beer={data.name}
-      />
-
-      {/* <GetTotal /> */}
+      {/* <Cart addToCart={addToCart} removeFromCart={removeFromCart} beer={data.name} /> */}
     </motion.section>
   );
 }

@@ -34,6 +34,29 @@ function App() {
   } else if (day === 7) {
     currentDay = "Sun";
   }
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      x: "100vh",
+      scale: 1.2,
+    },
+    in: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+    },
+    out: {
+      opacity: 0,
+      x: "-100vh",
+      scale: 0.8,
+    },
+  };
+
+  const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 1,
+  };
 
   const location = useLocation();
 
@@ -48,10 +71,10 @@ function App() {
       <ProgressBar />
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
-          <Route path="/" exact component={LandingPage} />
-          <Route path="/beers" component={Beers} />
-          <Route path="/form" component={FormPage} />
-          <Route path="/confirmation" component={Confirmation} />
+          <Route path="/" exact render={(props) => <LandingPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
+          <Route path="/beers" render={(props) => <Beers {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
+          <Route path="/form" render={(props) => <FormPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
+          <Route path="/confirmation" render={(props) => <Confirmation {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
         </Switch>
       </AnimatePresence>
     </main>
