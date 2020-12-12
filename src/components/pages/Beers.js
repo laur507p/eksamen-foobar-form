@@ -65,6 +65,7 @@ function BeersList() {
 
   function addToCart(beer) {
     console.log(beer);
+
     const nextCart = cart.map((item) => {
       if (item.name === beer) {
         console.log("fandt øl");
@@ -74,10 +75,12 @@ function BeersList() {
     });
     console.log(nextCart);
     setCart(nextCart);
+    localStorage.setItem("currentCart", JSON.stringify(cart));
   }
 
   function removeFromCart(beer) {
     console.log(beer);
+
     const nextCart = cart.map((item) => {
       if (item.name === beer) {
         console.log("minus øl");
@@ -87,6 +90,7 @@ function BeersList() {
     });
     console.log(nextCart);
     setCart(nextCart);
+    localStorage.setItem("currentCart", JSON.stringify(cart));
   }
   function submitOrder() {
     console.log("submitOrder");
