@@ -14,7 +14,7 @@ export default function ProgressBar() {
           <Link to="/beers">Beers</Link>
         </li>
         <li>
-          <Link to="/form">Formpage</Link>
+          <Link to="/payment">Formpage</Link>
         </li>
         <li>
           <Link to="/confirmation">Confirmation</Link>
