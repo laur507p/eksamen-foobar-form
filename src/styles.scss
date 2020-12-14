@@ -4,4 +4,25 @@
 @import "./sass/general";
 @import "./sass/form";
 @import "./sass/components/header";
+@import "./sass/components/form-elements";
 @import "./sass/orderform";
+@import "./sass/mixins";
+@import "./sass/color-palette";
+
+// body {
+// }
+
+.screen {
+  @include theme-aware("background", "light-color");
+  @include theme-aware("border", "main-color");
+}
+
+h1 {
+  @include theme-aware("color", "light-color");
+}
+
+h2,
+h3,
+p {
+  @include theme-aware("color", "dark-color");
+}
