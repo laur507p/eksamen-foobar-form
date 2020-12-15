@@ -112,7 +112,7 @@ function App() {
         </p>
       </header>
 
-      <ProgressBar createBox={createBox} />
+      <ProgressBar />
 
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
@@ -145,6 +145,7 @@ function App() {
                 {...props}
                 pageTransition={pageTransition}
                 pageVariants={pageVariants}
+                createBox={createBox}
               />
             )}
           />
