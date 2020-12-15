@@ -63,14 +63,36 @@ function App() {
   // location used for the animation
   const location = useLocation();
 
+  // Array of themes
+  const themes = ["80s-dream", "Vortex", "Pastel-heaven"];
+
+  const user = {
+    theme: "80s-dream",
+  };
+
+  const changeTheme = (e) => {
+    user.theme = e.target.value;
+
+    document.documentElement.className = "";
+    document.documentElement.classList.add(`theme-${user.theme}`);
+  };
+
   return (
     <main id="main-wrapper">
       <header id="top-header">
         <h1>FooBar</h1>
+        <select defaultValue={user.theme} onChange={changeTheme}>
+          {themes.map((theme, index) => (
+            <option value={theme} key={index}>
+              {theme}
+            </option>
+          ))}
+        </select>
         <p id="time">
           {currentDay} {currentTime}
         </p>
       </header>
+
       <ProgressBar />
 
       <AnimatePresence>
