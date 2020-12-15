@@ -3,9 +3,9 @@ import React, { useState } from "react";
 
 export default function AddAndRemove(props) {
   const [number, setNumber] = useState(0);
-  
-  
+
   function subtract() {
+    console.log("subtract");
     if (number > 0) {
       setNumber(number - 1);
       props.setTotal(props.total - props.price);
@@ -14,10 +14,10 @@ export default function AddAndRemove(props) {
   }
 
   function add() {
+    console.log("add");
     setNumber(number + 1);
     props.setTotal(props.total + props.price);
     props.addToCart(props.beer);
-    
   }
 
   return (
@@ -26,6 +26,5 @@ export default function AddAndRemove(props) {
       {number}
       <button onClick={add}>+</button>
     </div>
-   
   );
 }
