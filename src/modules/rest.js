@@ -12,7 +12,7 @@ export function get(callback) {
 }
 
 export function getHerokuData(callback) {
-  fetch("https://foobar-eksamen.herokuapp.com/", {
+  fetch("https://foobar-eksamen.herokuapp.com", {
     method: "get",
     headers: {
       "Content-Type": "application/json; charset=utf-8",

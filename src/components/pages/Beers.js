@@ -29,23 +29,31 @@ function BeersList(props) {
   // console.log({ cart });
   // console.log("Beers", Beers);
   // console.log("taps", taps);
+  let set = new Set();
   function filterAvailableTaps() {
     console.log("filterAvailableTaps");
     if (Beers.length === 0) {
       return [];
     }
+
     const available = taps.map((tap) => {
       const match = Beers.filter((beer) => beer.name === tap.beer);
+
       return match[0];
     });
+
     return available;
   }
 
-  // console.log(taps);
-
   const available = filterAvailableTaps();
-  // console.log("available", available);
 
+  console.log("taps", taps);
+  console.log("available", available);
+
+  // const filterAvailable = available.map((tap) => {
+  //   set.add(tap.name);
+  // });
+  // console.log("set", set);
   // console.log("Beers", Beers);
 
   // console.log("cart", cart);
@@ -115,6 +123,7 @@ function BeersList(props) {
 
     localStorage.setItem("currentCart", JSON.stringify(finalCart));
     // post(nextCart);
+    // const createBox = props.createBox;
   }
 
   return (
