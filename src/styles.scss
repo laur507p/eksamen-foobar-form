@@ -9,12 +9,14 @@
 @import "./sass/mixins";
 @import "./sass/color-palette";
 
-// body {
-// }
+#top-header {
+  @include theme-aware("background", "main-color");
+}
 
 .screen {
   @include theme-aware("background", "light-color");
-  @include theme-aware("border", "main-color");
+  @include theme-aware("border-color", "main-color");
+  @include theme-aware("box-shadow", "box-shadow");
 }
 
 h1 {
