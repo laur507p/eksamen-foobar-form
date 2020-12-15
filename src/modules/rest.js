@@ -1,15 +1,52 @@
-export function post(nextCart, cart) {
-  fetch("https://foobar-eksamen.herokuapp.com/", {
-    method: "post",
+export function get(callback) {
+  fetch("https://beers-37c9.restdb.io/rest/beers", {
+    method: "get",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "x-apikey": "5f96a7f34b77c1637d147dd0",
+      "x-apikey": "5fd544afff9d6706381404f5",
       "cache-control": "no-cache",
     },
-    body: JSON.stringify(nextCart),
   })
     .then((e) => e.json())
-    .then((data) => {
-      callback(cart.concat(data));
-    });
+    .then((data) => callback(data));
 }
+
+export function getHerokuData(callback) {
+  fetch("https://foobar-eksamen.herokuapp.com/", {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  })
+    .then((e) => e.json())
+
+    .then((data) => callback(data.taps));
+}
+
+// export function get(callback) {
+//   fetch("https://beers-37c9.restdb.io/rest/beers", {
+//     method: "get",
+//     headers: {
+//       "Content-Type": "application/json; charset=utf-8",
+//       "x-apikey": "5fd544afff9d6706381404f5",
+//       "cache-control": "no-cache",
+//     },
+//   })
+//     .then((e) => e.json())
+//     .then((data) => callback(data));
+// }
+// export function post(nextCart, cart) {
+//   fetch("https://foobar-eksamen.herokuapp.com/", {
+//     method: "post",
+//     headers: {
+//       "Content-Type": "application/json; charset=utf-8",
+//       "x-apikey": "5f96a7f34b77c1637d147dd0",
+//       "cache-control": "no-cache",
+//     },
+//     body: JSON.stringify(nextCart),
+//   })
+//     .then((e) => e.json())
+//     .then((data) => {
+//       callback(cart.concat(data));
+//     });
+// }

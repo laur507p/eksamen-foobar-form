@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 export default function FormPage(props) {
   // current order to submit with form!
   const currentCart = localStorage.getItem("currentCart");
+
   const cartArray = JSON.parse(currentCart);
-  console.log(cartArray);
+  console.log("cartArray", cartArray);
 
   return (
     <motion.section
