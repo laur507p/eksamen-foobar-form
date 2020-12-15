@@ -12,39 +12,6 @@
 @import "./sass/components/buttons";
 @import "./sass/components/progressbar";
 
-// #top-header {
-//   @include theme-aware("background", "main-color");
-// }
-
-// .screen {
-//   // .window-top {
-//   //   @include theme-aware("border-color", "border-color");
-//   // }
-//   // li {
-//   //   @include theme-aware("border-color", "border-color");
-//   // }
-//   @include theme-aware("border-color", "border-color");
-//   @include theme-aware("box-shadow", "box-shadow");
-// }
-
-h1 {
-  @include theme-aware("color", "dark-color");
-}
-
-h2,
-h3,
-p {
-  @include theme-aware("color", "text-color");
-}
-
-.bottom-section p {
-  @include theme-aware("color", "light-color");
-}
-
-// .bottom-section {
-//   @include theme-aware("background-color", "bottom-section");
-// }
-
 // Font families
 
 @font-face {
@@ -56,5 +23,3 @@ p {
   font-family: "vtf_misterpixeltools";
   src: local("VTF"), url(./fonts/mister_pixel_tools-webfont.woff) format("woff");
 }
-
-// Font families
