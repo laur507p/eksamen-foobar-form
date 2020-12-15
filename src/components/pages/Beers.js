@@ -3,6 +3,7 @@ import AddAndRemove from "../AddAndRemove";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { get, getHerokuData } from "../../modules/rest";
+import Window from "../Window";
 import ProgressBar from "../ProgressBar";
 
 function BeersList(props) {
@@ -126,42 +127,39 @@ function BeersList(props) {
   }
 
   return (
-    <motion.section
-      style={{ position: "absolute" }}
-      initial="initial"
-      exit="out"
-      animate="in"
-      variants={props.pageVariants}
-      transition={props.pageTransition}
-      className="screen"
-    >
-      <ul>
-        {available.map((data) => (
-          <li key={data.id}>
-            <p>{data.name}</p>
-            <p>{data.price}</p>
-            <p>{data.description}</p>
-            <AddAndRemove
-              price={data.price}
-              total={total}
-              setTotal={setTotal}
-              beer={data.name}
-              addToCart={addToCart}
-              removeFromCart={removeFromCart}
-            />
-          </li>
-        ))}
-      </ul>
-      <p>Total: {total}</p>
-      {/* <button onClick={submitOrder}>Continue</button> */}
-      <Link onClick={submitOrder} to="/payment">
-        TO PAYMENT
-      </Link>
-      {/* <Cart
+    <motion.section style={{ position: "absolute" }} initial="initial" exit="out" animate="in" variants={props.pageVariants} transition={props.pageTransition} className="screen">
+      <Window />
+      <div class="window-container">
+        <h2>Beers</h2>
+        <ul>
+          {available.map((data) => (
+            <li key={data.id}>
+              <div class="li-text">
+                <div class="top-section">
+                  <h3>{data.name}</h3>
+                  <p>{data.price}</p>
+                </div>
+                <p>{data.description}</p>
+              </div>
+              <div class="li-info">
+                <AddAndRemove price={data.price} total={total} setTotal={setTotal} beer={data.name} addToCart={addToCart} removeFromCart={removeFromCart} />
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="bottom-section">
+        <p>Total: {total}</p>
+        {/* <button onClick={submitOrder}>Continue</button> */}
+        <Link className="form-button" onClick={submitOrder} to="/payment">
+          TO PAYMENT
+        </Link>
+        {/* <Cart
         addToCart={addToCart}
         removeFromCart={removeFromCart}
         beer={data.name}
       /> */}
+      </div>
     </motion.section>
   );
 }

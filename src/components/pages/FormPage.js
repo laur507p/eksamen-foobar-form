@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../Form";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Window from "../Window";
 import { post } from "../../modules/rest";
 
 export default function FormPage(props) {
@@ -12,25 +13,16 @@ export default function FormPage(props) {
   console.log("cartArray", cartArray);
 
   return (
-    <motion.section
-      style={{ position: "absolute" }}
-      exit="out"
-      animate="in"
-      initial="initial"
-      variants={props.pageVariants}
-      transition={props.pageTransition}
-      className="screen"
-      id="form"
-    >
-      <a href="#screen4" className="testbutton">
-        Next
-      </a>
+    <motion.section style={{ position: "absolute" }} exit="out" animate="in" initial="initial" variants={props.pageVariants} transition={props.pageTransition} className="screen" id="form">
+      <Window />
+      <div class="window-container">
+        <Form />
 
-      <Form />
-      {/* <button>Submit</button> */}
-      <Link to="/confirmation" onClick={post(cartArray)}>
-        CONFIRM ORDER
-      </Link>
+        {/* <button>Submit</button> */}
+        <Link to="/confirmation" onClick={post(cartArray)}>
+          CONFIRM ORDER
+        </Link>
+      </div>
     </motion.section>
   );
 }
