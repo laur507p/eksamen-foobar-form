@@ -21,9 +21,9 @@ export default function AddAndRemove(props) {
   }
 
   return (
-    <div>
+    <div class="add-remove-button">
       <button onClick={subtract}>-</button>
-      {number}
+      <div class="number"> {number}</div>
       <button onClick={add}>+</button>
     </div>
   );

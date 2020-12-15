@@ -1,6 +1,7 @@
 $themes: (
   80s-dream:
     (
+<<<<<<< HEAD
       main-color: #1e00ff,
       secondary-color: #f4e861,
       light-color: white,
@@ -8,13 +9,43 @@ $themes: (
       theme-background-img:
         "https://i.guim.co.uk/img/media/8d59925b6e10f2d96d3ef8388e3d7e5b8371257d/0_140_4571_2744/master/4571.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=cb52a2af9fd82671e2ffdff819badd83",
       box-shadow: 10px 5px 0px yellow,
+=======
+      // main-color: #1e00ff,
+      // secondary-color: #f4e861,
+      // text-color: white,
+      // dark-color: #393939,
+      // theme-background-img: url("https://i.guim.co.uk/img/media/8d59925b6e10f2d96d3ef8388e3d7e5b8371257d/0_140_4571_2744/master/4571.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=cb52a2af9fd82671e2ffdff819badd83"),
+      // box-shadow: 10px 5px 0px yellow,
+      // border-color: 1ff,
+      header-color: #1e00ff,
+      border-color: #1e00ff,
+      text-color: black,
+      header-txt-color: white,
+      button-color: black,
+      form-button-color: black,
+      shadow-color: #f4e861,
+      background-color: white,
+      overview-section: #1e00ff,
+      box-shadow: 10px 5px 0px #f4e861,
+      bottom-section: #1e00ff,
+      bottom-section-txt: white,
+      // theme-background-img: url("https://markusjorgensen.dk/vortex-01.png"),
+>>>>>>> 1ced3fb98f17431fd031f236c738fa819803d55f
     ),
   Vortex: (
-    main-color: #000000,
-    secondary-color: #79ffa8,
-    light-color: white,
-    dark-color: #393939,
-    box-shadow: 10px 5px 0px green,
+    header-color: black,
+    border-color: white,
+    text-color: white,
+    header-txt-color: white,
+    button-color: white,
+    form-button-color: black,
+    shadow-color: #79ffa8,
+    background-color: black,
+    overview-section: #79ffa8,
+    box-shadow: 10px 5px 0px #79ffa8,
+    bottom-section: black,
+    bottom-section-txt: white,
+    theme-background-img: url("https://markusjorgensen.dk/vortex-01.png"),
   ),
   Pastel-heaven: (
     main-color: pink,

@@ -1,3 +1,11 @@
+@import "./sass/mixins";
+@import "./sass/color-palette";
+
+body {
+  @include theme-aware("background-image", "theme-background-img");
+  background-size: cover;
+}
+
 .testbutton {
   font-size: 5rem;
 }

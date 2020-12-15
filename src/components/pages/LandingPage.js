@@ -7,8 +7,15 @@ export default function LandingPage(props) {
   return (
     <motion.section style={{ position: "absolute" }} initial="initial" exit="out" animate="in" variants={props.pageVariants} transition={props.pageTransition} className="screen">
       <Window />
-      <Link to="/beers">GET STARTED</Link>
-      <h1>Landing page</h1>
+      <div class="window-container">
+        <h1>
+          WELCOME
+          <br /> TO
+          <br />
+          FOOBAR
+        </h1>
+        <Link to="/beers">GET STARTED</Link>
+      </div>
     </motion.section>
   );
 }

@@ -1,12 +1,19 @@
-// header
+@import "./sass/mixins";
+@import "./sass/color-palette";
 
 #top-header {
+  @include theme-aware("background", "header-color");
+  @include theme-aware("border-color", "border-color");
+  border-style: solid;
   display: flex;
   justify-content: space-between;
   height: 50px;
   width: 100vw;
-  background-color: blue;
   z-index: 10000;
+}
+
+#top-header h1 {
+  @include theme-aware("color", "header-h1");
 }
 
 #top-spacer {
