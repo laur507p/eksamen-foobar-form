@@ -12,10 +12,6 @@
   z-index: 10000;
 }
 
-#top-header h1 {
-  @include theme-aware("color", "header-h1");
-}
-
 #top-spacer {
   height: 50px;
   z-index: 10000;
