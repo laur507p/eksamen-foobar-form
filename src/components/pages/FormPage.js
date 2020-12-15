@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../Form";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { post } from "../../modules/rest";
 
 export default function FormPage(props) {
   // current order to submit with form!
@@ -27,7 +28,9 @@ export default function FormPage(props) {
 
       <Form />
       {/* <button>Submit</button> */}
-      <Link to="/confirmation">CONFIRM ORDER</Link>
+      <Link to="/confirmation" onClick={post(cartArray)}>
+        CONFIRM ORDER
+      </Link>
     </motion.section>
   );
 }

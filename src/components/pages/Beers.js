@@ -3,6 +3,7 @@ import AddAndRemove from "../AddAndRemove";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { get, getHerokuData } from "../../modules/rest";
+import ProgressBar from "../ProgressBar";
 
 function BeersList(props) {
   const [Beers, setBeers] = useState([]);
@@ -24,7 +25,7 @@ function BeersList(props) {
     });
     setCart(tempCart);
   }, [taps]);
-  console.log({ cart });
+  // console.log({ cart });
   // console.log("Beers", Beers);
   // console.log("taps", taps);
   function filterAvailableTaps() {
@@ -42,7 +43,7 @@ function BeersList(props) {
   // console.log(taps);
 
   const available = filterAvailableTaps();
-  console.log("available", available);
+  // console.log("available", available);
 
   // console.log("Beers", Beers);
 
@@ -66,12 +67,12 @@ function BeersList(props) {
     });
 
     setCart(nextCart);
-    console.log("nextCart", nextCart);
+    // console.log("nextCart", nextCart);
   }
 
   function removeFromCart(beer) {
     console.log("removeFromCart");
-    console.log(beer);
+    // console.log(beer);
 
     const nextCart = cart.map((item) => {
       if (item.name === beer) {
@@ -83,23 +84,35 @@ function BeersList(props) {
 
     setCart(nextCart);
   }
+  const finalCart = [];
   function submitOrder() {
     console.log("submitOrder");
     const nextCart = cart.map((item) => {
       if (item.amount > 0) {
-        console.log("filtreret øl", item.name, "x", item.amount);
-        return {
-          name: item.name,
-          amount: item.amount,
-        };
+        finalCart.push(item);
       }
       return item;
     });
 
+    console.log("finalCart", finalCart);
+
     setCart(nextCart);
+
+    // const finalCart = cart.map((item) => {
+    //   if (item.amount > 0) {
+    //     console.log("filtreret øl", item.name, "x", item.amount);
+    //     return item.name + " x " + item.amount;
+    //   }
+    // });
+    // setCart(finalCart);
+
+    // console.log("finalCart", finalCart);
+    // console.log(finalCart.length);
+    console.log("submitOrdernextCart", nextCart);
+    // console.log("finalCart", finalCart);
     // store the current order in localstorage
 
-    localStorage.setItem("currentCart", JSON.stringify(cart));
+    localStorage.setItem("currentCart", JSON.stringify(finalCart));
     // post(nextCart);
   }
 

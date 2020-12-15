@@ -1,0 +1,50 @@
+.navigation {
+  li {
+    padding: 10px;
+    text-align: center;
+  }
+  nav {
+    justify-content: center;
+  }
+  width: 50vw;
+  //   left: 25vw;
+  margin-left: 190px;
+  border: 1px solid black;
+}
+
+.progressbar {
+  padding-top: 5vw;
+  width: 50vw;
+  height: 10px;
+  background-color: #000;
+  position: relative;
+}
+
+.progressbox_container {
+  width: 90%;
+  height: 20px;
+  background-color: hotpink;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
+
+.progressbox {
+  display: inline-block;
+  position: relative;
+  margin-top: 1.5px;
+  width: 15px;
+  height: 15px;
+  background-color: blue;
+  margin: 2.5px 1.5px 2.5px 1.5px;
+}
+
+.progressbox_overlay {
+  width: 90%;
+  height: 20px;
+  background-color: orange;
+  opacity: 0.5;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+}
