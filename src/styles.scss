@@ -10,26 +10,22 @@
 @import "./sass/color-palette";
 @import "./sass/components/form-elements";
 @import "./sass/components/buttons";
+@import "./sass/components/progressbar";
 
-// body {
-//   @include theme-aware("background", "theme-background-img");
+// #top-header {
+//   @include theme-aware("background", "main-color");
 // }
 
-#top-header {
-  @include theme-aware("background", "main-color");
-}
-
-.screen {
-  .window-top {
-    @include theme-aware("border-color", "border-color");
-  }
-  li {
-    @include theme-aware("border-color", "border-color");
-  }
-  @include theme-aware("background", "background-color");
-  @include theme-aware("border-color", "border-color");
-  @include theme-aware("box-shadow", "box-shadow");
-}
+// .screen {
+//   // .window-top {
+//   //   @include theme-aware("border-color", "border-color");
+//   // }
+//   // li {
+//   //   @include theme-aware("border-color", "border-color");
+//   // }
+//   @include theme-aware("border-color", "border-color");
+//   @include theme-aware("box-shadow", "box-shadow");
+// }
 
 h1 {
   @include theme-aware("color", "dark-color");
@@ -45,9 +41,9 @@ p {
   @include theme-aware("color", "light-color");
 }
 
-.bottom-section {
-  @include theme-aware("background-color", "bottom-section");
-}
+// .bottom-section {
+//   @include theme-aware("background-color", "bottom-section");
+// }
 
 // Font families
 

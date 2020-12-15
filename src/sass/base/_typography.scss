@@ -1,15 +1,22 @@
+@import "./sass/mixins";
+@import "./sass/color-palette";
+
 h1 {
+  @include theme-aware("color", "dark-color");
   font-family: vtf_misterpixelregular;
   font-size: 3rem;
 }
 
 h2 {
+  @include theme-aware("color", "dark-color");
   font-family: vtf_misterpixelregular;
   text-transform: uppercase;
   font-size: 1.8rem;
+  margin-bottom: 10vh;
 }
 
 h3 {
+  @include theme-aware("color", "dark-color");
   font-family: vtf_misterpixelregular;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -18,8 +25,16 @@ h3 {
 p,
 input,
 label {
+  @include theme-aware("color", "dark-color");
   font-family: pt-mono;
   font-size: 1rem;
+}
+
+#top-header {
+  p,
+  h1 {
+    @include theme-aware("color", "header-txt-color");
+  }
 }
 
 .number,
@@ -29,6 +44,7 @@ label {
 }
 
 .form-button {
+  @include theme-aware("color", "form-button-color");
   font-family: vtf_misterpixelregular;
   font-size: 1rem;
 }

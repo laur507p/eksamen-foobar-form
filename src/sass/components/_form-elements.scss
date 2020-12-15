@@ -1,9 +1,12 @@
+@import "./sass/mixins";
+@import "./sass/color-palette";
+
 .screen {
   li {
     margin-bottom: 5vw;
     padding: 1rem;
     border-style: solid;
-    border-color: black;
+    @include theme-aware("border-color", "border-color");
     border-width: 3px;
     display: flex;
     justify-content: space-evenly;
@@ -30,13 +33,14 @@
   }
 
   .add-remove-button {
+    @include theme-aware("border-color", "border-color");
+    @include theme-aware("color", "button-color");
     margin-left: 5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-style: solid;
     border-width: 5px;
-    border-color: blue;
     width: 110px;
     height: 70px;
   }
@@ -46,15 +50,16 @@
   }
 
   button {
+    @include theme-aware("color", "button-color");
     align-content: center;
     flex-grow: 1;
     background: none;
   }
 
   .bottom-section {
+    @include theme-aware("background-color", "bottom-section");
     display: flex;
     flex-direction: row;
-    background-color: blue;
     height: 11vh;
     padding: 2rem;
     justify-content: space-between;
@@ -62,15 +67,18 @@
   }
 
   .bottom-section p {
-    color: white;
+    @include theme-aware("color", "bottom-section-txt");
   }
+
+  @include theme-aware("box-shadow", "box-shadow");
+  @include theme-aware("background-color", "background-color");
+  @include theme-aware("border-color", "border-color");
+  border-style: solid;
+  border-width: 5px;
 
   top: 100px;
   left: 5vw;
   right: 5vw;
-  border-style: solid;
-  border-width: 5px;
-  box-shadow: 10px 5px 0px;
   padding: 0;
   min-height: 80vh;
   width: 90vw;
@@ -82,6 +90,7 @@
 }
 
 .window-top {
+  @include theme-aware("border-color", "border-color");
   display: flex;
   width: 100%;
   height: 4vh;
