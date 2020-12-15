@@ -58,6 +58,7 @@
 
   .bottom-section {
     @include theme-aware("background-color", "bottom-section");
+
     display: flex;
     flex-direction: row;
     height: 11vh;
