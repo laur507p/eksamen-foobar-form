@@ -8,23 +8,57 @@
 @import "./sass/orderform";
 @import "./sass/mixins";
 @import "./sass/color-palette";
+@import "./sass/components/form-elements";
+@import "./sass/components/buttons";
+
+// body {
+//   @include theme-aware("background", "theme-background-img");
+// }
 
 #top-header {
   @include theme-aware("background", "main-color");
 }
 
 .screen {
-  @include theme-aware("background", "light-color");
-  @include theme-aware("border-color", "main-color");
+  .window-top {
+    @include theme-aware("border-color", "border-color");
+  }
+  li {
+    @include theme-aware("border-color", "border-color");
+  }
+  @include theme-aware("background", "background-color");
+  @include theme-aware("border-color", "border-color");
   @include theme-aware("box-shadow", "box-shadow");
 }
 
 h1 {
-  @include theme-aware("color", "light-color");
+  @include theme-aware("color", "dark-color");
 }
 
 h2,
 h3,
 p {
-  @include theme-aware("color", "dark-color");
+  @include theme-aware("color", "text-color");
 }
+
+.bottom-section p {
+  @include theme-aware("color", "light-color");
+}
+
+.bottom-section {
+  @include theme-aware("background-color", "bottom-section");
+}
+
+// Font families
+
+@font-face {
+  font-family: "vtf_misterpixelregular";
+  src: local("VTF"), url(./fonts/mister_pixel_regular-webfont.woff) format("woff");
+}
+
+@font-face {
+  font-family: "vtf_misterpixeltools";
+  src: local("VTF"), url(./fonts/mister_pixel_tools-webfont.woff) format("woff");
+}
+
+// Font families

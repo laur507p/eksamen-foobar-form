@@ -29,3 +29,14 @@ html {
 ul {
   list-style-type: none;
 }
+
+button {
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

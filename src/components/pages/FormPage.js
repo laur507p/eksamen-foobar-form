@@ -2,6 +2,7 @@ import React from "react";
 import Form from "../Form";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Window from "../Window";
 
 export default function FormPage(props) {
   // current order to submit with form!
@@ -11,23 +12,13 @@ export default function FormPage(props) {
   console.log("cartArray", cartArray);
 
   return (
-    <motion.section
-      style={{ position: "absolute" }}
-      exit="out"
-      animate="in"
-      initial="initial"
-      variants={props.pageVariants}
-      transition={props.pageTransition}
-      className="screen"
-      id="form"
-    >
-      <a href="#screen4" className="testbutton">
-        Next
-      </a>
-
-      <Form />
-      {/* <button>Submit</button> */}
-      <Link to="/confirmation">CONFIRM ORDER</Link>
+    <motion.section style={{ position: "absolute" }} exit="out" animate="in" initial="initial" variants={props.pageVariants} transition={props.pageTransition} className="screen" id="form">
+      <Window />
+      <div class="window-container">
+        <Form />
+        {/* <button>Submit</button> */}
+        <Link to="/confirmation">CONFIRM ORDER</Link>
+      </div>
     </motion.section>
   );
 }
