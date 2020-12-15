@@ -77,6 +77,25 @@ function App() {
     document.documentElement.classList.add(`theme-${user.theme}`);
   };
 
+  //Progress bar animation
+  const createBox = () => {
+    console.log("createBox");
+    for (let i = 0; i < 7; i++) {
+      task(i);
+    }
+  };
+  function task(i) {
+    setTimeout(function () {
+      console.log("task");
+      const box = document.createElement("div");
+      box.classList.add("progressbox");
+      box.style.width = "15px";
+      box.style.height = "15px";
+      box.style.backgroundColor = "blue";
+      document.getElementById("container").appendChild(box);
+    }, 200 * i);
+  }
+
   return (
     <main id="main-wrapper">
       <header id="top-header">
@@ -93,7 +112,7 @@ function App() {
         </p>
       </header>
 
-      <ProgressBar />
+      <ProgressBar createBox={createBox} />
 
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
@@ -115,6 +134,7 @@ function App() {
                 {...props}
                 pageTransition={pageTransition}
                 pageVariants={pageVariants}
+                createBox={createBox}
               />
             )}
           />
