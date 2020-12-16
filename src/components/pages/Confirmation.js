@@ -5,17 +5,9 @@ import { Link } from "react-router-dom";
 
 export default function Confirmation(props) {
   return (
-    <motion.section
-      style={{ position: "absolute" }}
-      initial="initial"
-      exit="out"
-      animate="in"
-      variants={props.pageVariants}
-      transition={props.pageTransition}
-      className="screen"
-    >
+    <motion.section style={{ position: "absolute" }} initial="initial" exit="out" animate="in" variants={props.pageVariants} transition={props.pageTransition} className="screen">
       <Window />
-      <div className="window-container confirmation-text">
+      <div className="window-container large_text">
         <h1>
           YOU'RE <br /> DONE
         </h1>
