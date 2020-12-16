@@ -153,7 +153,7 @@ function BeersList(props) {
         </ul>
       </div>
       <div className="bottom-section">
-        <p>Total: {total}</p>
+        <p>Total: {total} DKK</p>
         {/* <button onClick={submitOrder}>Continue</button> */}
         <Link className="form-button" onClick={callFunctions} to="/payment">
           TO PAYMENT
