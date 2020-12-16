@@ -30,13 +30,13 @@ export default function ProgressBar() {
       <nav>
         <ul>
           <li>
-            <Link to="/beers">Beers</Link>
+            <Link to="/beers">Choose Beer/s</Link>
           </li>
           <li>
-            <Link to="/payment">Formpage</Link>
+            <Link to="/payment">Pay Up</Link>
           </li>
           <li>
-            <Link to="/confirmation">Confirmation</Link>
+            <Link to="/confirmation">You're done</Link>
           </li>
         </ul>
       </nav>

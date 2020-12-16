@@ -39,10 +39,11 @@ export function post(payload) {
   fetch("https://foobar-eksamen.herokuapp.com/order", {
     method: "post",
     headers: {
-      "Content-Type": "application/json; charset=utf-8",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(payload),
   })
     .then((res) => res.json())
     .then((data) => console.log(data));
+  console.log("payload", payload);
 }

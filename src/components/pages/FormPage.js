@@ -12,7 +12,7 @@ export default function FormPage(props) {
   const cartArray = JSON.parse(currentCart);
   console.log("cartArray", cartArray);
   function callFunctions() {
-    post(cartArray);
+    const postFunction = () => post(cartArray);
     props.createBox();
   }
 

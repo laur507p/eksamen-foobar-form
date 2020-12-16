@@ -25,41 +25,51 @@ function BeersList(props) {
     });
     setCart(tempCart);
   }, [taps]);
-  // console.log({ cart });
-  // console.log("Beers", Beers);
-  // console.log("taps", taps);
+
+  console.log("original taps", taps);
   let set = new Set();
+  function uniqueTaps() {
+    console.log("uniqueTaps");
+    const unique = taps.map((tap) => {
+      set.add(tap.beer);
+      return set;
+    });
+    return unique[0];
+  }
+  const unique = uniqueTaps();
+  console.log("unique", unique);
+
   function filterAvailableTaps() {
     console.log("filterAvailableTaps");
+
     if (Beers.length === 0) {
       return [];
     }
-
-    const available = taps.map((tap) => {
-      set.add(tap.beer);
-      console.log("set", set);
-      const match = Beers.filter((beer) => beer.name === tap.beer);
-
-      return match[0];
+    let available = [];
+    taps.forEach((tap) => {
+      Beers.forEach((beer) => {
+        if (tap.beer === beer.name) {
+          if (
+            available.filter((item) => item.name === beer.name).length === 0
+          ) {
+            available.push(beer);
+          }
+        }
+      });
     });
 
+    // const available = taps.map((tap) => {
+    //   // console.log("set", set);
+
+    //   const match = Beers.filter((beer) => beer.name === tap.beer);
+    //   console.log("match", match);
+
+    //   return match[0];
+    // });
     return available;
   }
-
   const available = filterAvailableTaps();
-
-  console.log("taps", taps);
   console.log("available", available);
-
-  // const filterAvailable = available.map((tap) => {
-  //   set.add(tap.name);
-  // });
-  // console.log("set", set);
-  // console.log("Beers", Beers);
-
-  // console.log("cart", cart);
-
-  // console.log("cart", cart);
 
   function addToCart(beer) {
     console.log("addToCart");
@@ -104,20 +114,10 @@ function BeersList(props) {
       return item;
     });
 
-    console.log("finalCart", finalCart);
+    // console.log("finalCart", finalCart);
 
     setCart(nextCart);
 
-    // const finalCart = cart.map((item) => {
-    //   if (item.amount > 0) {
-    //     console.log("filtreret øl", item.name, "x", item.amount);
-    //     return item.name + " x " + item.amount;
-    //   }
-    // });
-    // setCart(finalCart);
-
-    // console.log("finalCart", finalCart);
-    // console.log(finalCart.length);
     console.log("submitOrdernextCart", nextCart);
     // console.log("finalCart", finalCart);
     // store the current order in localstorage
@@ -128,8 +128,9 @@ function BeersList(props) {
   }
 
   function callFunctions() {
+    console.log("callFunctions");
     submitOrder();
-    props.createBox();
+    // props.createBox();
   }
 
   return (
@@ -143,19 +144,19 @@ function BeersList(props) {
       className="screen"
     >
       <Window />
-      <div class="window-container">
+      <div className="window-container">
         <h2>Beers</h2>
         <ul>
           {available.map((data) => (
             <li key={data.id}>
-              <div class="li-text">
-                <div class="top-section">
+              <div className="li-text">
+                <div className="top-section">
                   <h3>{data.name}</h3>
                   <p>{data.price}</p>
                 </div>
                 <p>{data.description}</p>
               </div>
-              <div class="li-info">
+              <div className="li-info">
                 <AddAndRemove
                   price={data.price}
                   total={total}
@@ -169,7 +170,7 @@ function BeersList(props) {
           ))}
         </ul>
       </div>
-      <div class="bottom-section">
+      <div className="bottom-section">
         <p>Total: {total}</p>
         {/* <button onClick={submitOrder}>Continue</button> */}
         <Link className="form-button" onClick={callFunctions} to="/payment">
