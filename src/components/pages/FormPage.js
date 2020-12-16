@@ -15,7 +15,7 @@ export default function FormPage(props) {
   return (
     <motion.section style={{ position: "absolute" }} exit="out" animate="in" initial="initial" variants={props.pageVariants} transition={props.pageTransition} className="screen" id="form">
       <Window />
-      <div class="window-container">
+      <div className="window-container">
         <Form />
 
         {/* <button>Submit</button> */}
