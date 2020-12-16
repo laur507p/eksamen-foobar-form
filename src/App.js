@@ -83,7 +83,7 @@ function App() {
   //Progress bar animation
   const createBox = () => {
     console.log("createBox");
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 16; i++) {
       task(i);
     }
   };
@@ -92,11 +92,9 @@ function App() {
       console.log("task");
       const box = document.createElement("div");
       box.classList.add("progressbox");
-      box.style.width = "15px";
-      box.style.height = "15px";
-      box.style.backgroundColor = "blue";
-      document.getElementById("container").appendChild(box);
-    }, 200 * i);
+
+      document.getElementById("progressbar").appendChild(box);
+    }, 100 * i);
   }
 
   return (

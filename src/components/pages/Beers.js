@@ -128,7 +128,7 @@ function BeersList(props) {
   function callFunctions() {
     console.log("callFunctions");
     submitOrder();
-    // props.createBox();
+    props.createBox();
   }
 
   return (
