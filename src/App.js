@@ -80,8 +80,14 @@ function App() {
   //Progress bar animation
   const createBox = () => {
     console.log("createBox");
-    for (let i = 0; i < 16; i++) {
-      task(i);
+    if (window.width < 600) {
+      for (let i = 0; i < 16; i++) {
+        task(i);
+      }
+    } else {
+      for (let i = 0; i < 25; i++) {
+        task(i);
+      }
     }
   };
   function task(i) {
