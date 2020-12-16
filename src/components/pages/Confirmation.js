@@ -6,7 +6,7 @@ export default function Confirmation(props) {
   return (
     <motion.section style={{ position: "absolute" }} initial="initial" exit="out" animate="in" variants={props.pageVariants} transition={props.pageTransition} className="screen">
       <Window />
-      <div class="window-container">
+      <div className="window-container">
         <h1>Confirmation</h1>
       </div>
     </motion.section>
