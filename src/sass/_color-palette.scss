@@ -17,12 +17,8 @@ $themes: (
       bottom-section: #1e00ff,
       bottom-section-txt: white,
       confirm-button: #1e00ff,
-<<<<<<< HEAD
       theme-background-img: url("https://markusjorgensen.dk/80s-dream.jpg"),
-=======
-      theme-background-img: url("https://markusjorgensen.dk/80s-dream.png"),
       price-color: #1e00ff,
->>>>>>> markus
     ),
   Vortex: (
     header-color: black,
@@ -41,16 +37,6 @@ $themes: (
     bottom-section: black,
     bottom-section-txt: white,
     confirm-button: #79ffa8,
-<<<<<<< HEAD
-    theme-background-img: url("https://markusjorgensen.dk/vortex-01.png"),
-  ),
-  Pastel-heaven: (
-    main-color: pink,
-    secondary-color: rgb(194, 228, 255),
-    light-color: white,
-    dark-color: #393939,
-    box-shadow: 10px 5px 0px red,
-=======
     theme-background-img: url("https://markusjorgensen.dk/vortex.png"),
     price-color: white,
   ),
@@ -72,6 +58,5 @@ $themes: (
     confirm-button: #eeb4ff,
     theme-background-img: url("https://markusjorgensen.dk/pastel-heaven.png"),
     price-color: #ce24ff,
->>>>>>> markus
   )
 );
