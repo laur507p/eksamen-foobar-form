@@ -11,15 +11,28 @@ export default function FormPage(props) {
 
   const cartArray = JSON.parse(currentCart);
   console.log("cartArray", cartArray);
+  function callFunctions() {
+    post(cartArray);
+    props.createBox();
+  }
 
   return (
-    <motion.section style={{ position: "absolute" }} exit="out" animate="in" initial="initial" variants={props.pageVariants} transition={props.pageTransition} className="screen" id="form">
+    <motion.section
+      style={{ position: "absolute" }}
+      exit="out"
+      animate="in"
+      initial="initial"
+      variants={props.pageVariants}
+      transition={props.pageTransition}
+      className="screen"
+      id="form"
+    >
       <Window />
       <div className="window-container">
         <Form />
 
         {/* <button>Submit</button> */}
-        <Link to="/confirmation" onClick={post(cartArray)}>
+        <Link to="/confirmation" onClick={callFunctions}>
           CONFIRM ORDER
         </Link>
       </div>

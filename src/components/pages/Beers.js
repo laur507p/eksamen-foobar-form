@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { get, getHerokuData } from "../../modules/rest";
 import Window from "../Window";
-import ProgressBar from "../ProgressBar";
 
 function BeersList(props) {
   const [Beers, setBeers] = useState([]);
@@ -29,23 +28,33 @@ function BeersList(props) {
   // console.log({ cart });
   // console.log("Beers", Beers);
   // console.log("taps", taps);
+  let set = new Set();
   function filterAvailableTaps() {
     console.log("filterAvailableTaps");
     if (Beers.length === 0) {
       return [];
     }
+
     const available = taps.map((tap) => {
+      set.add(tap.beer);
+      console.log("set", set);
       const match = Beers.filter((beer) => beer.name === tap.beer);
+
       return match[0];
     });
+
     return available;
   }
 
-  // console.log(taps);
-
   const available = filterAvailableTaps();
-  // console.log("available", available);
 
+  console.log("taps", taps);
+  console.log("available", available);
+
+  // const filterAvailable = available.map((tap) => {
+  //   set.add(tap.name);
+  // });
+  // console.log("set", set);
   // console.log("Beers", Beers);
 
   // console.log("cart", cart);
@@ -115,10 +124,24 @@ function BeersList(props) {
 
     localStorage.setItem("currentCart", JSON.stringify(finalCart));
     // post(nextCart);
+    // const createBox = props.createBox;
+  }
+
+  function callFunctions() {
+    submitOrder();
+    props.createBox();
   }
 
   return (
-    <motion.section style={{ position: "absolute" }} initial="initial" exit="out" animate="in" variants={props.pageVariants} transition={props.pageTransition} className="screen">
+    <motion.section
+      style={{ position: "absolute" }}
+      initial="initial"
+      exit="out"
+      animate="in"
+      variants={props.pageVariants}
+      transition={props.pageTransition}
+      className="screen"
+    >
       <Window />
       <div className="window-container">
         <h2>Beers</h2>
@@ -133,7 +156,14 @@ function BeersList(props) {
                 <p>{data.description}</p>
               </div>
               <div class="li-info">
-                <AddAndRemove price={data.price} total={total} setTotal={setTotal} beer={data.name} addToCart={addToCart} removeFromCart={removeFromCart} />
+                <AddAndRemove
+                  price={data.price}
+                  total={total}
+                  setTotal={setTotal}
+                  beer={data.name}
+                  addToCart={addToCart}
+                  removeFromCart={removeFromCart}
+                />
               </div>
             </li>
           ))}
@@ -142,7 +172,7 @@ function BeersList(props) {
       <div class="bottom-section">
         <p>Total: {total}</p>
         {/* <button onClick={submitOrder}>Continue</button> */}
-        <Link className="form-button" onClick={submitOrder} to="/payment">
+        <Link className="form-button" onClick={callFunctions} to="/payment">
           TO PAYMENT
         </Link>
         {/* <Cart
