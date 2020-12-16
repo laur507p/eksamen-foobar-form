@@ -83,12 +83,12 @@ function App() {
   //Progress bar animation
   const createBox = () => {
     console.log("createBox");
-    if (window.width < 600) {
-      for (let i = 0; i < 16; i++) {
+    if (window.innerWidth > 600) {
+      for (let i = 0; i < 25; i++) {
         task(i);
       }
     } else {
-      for (let i = 0; i < 25; i++) {
+      for (let i = 0; i < 16; i++) {
         task(i);
       }
     }
@@ -106,33 +106,72 @@ function App() {
   return (
     <main id="main-wrapper">
       <header id="top-header">
-        <h1>FooBar</h1>
-        <select defaultValue={user.theme} onChange={changeTheme}>
-          {themes.map((theme, index) => (
-            <option value={theme} key={index}>
-              {theme}
-            </option>
-          ))}
-        </select>
-        <p id="time">
-          {currentDay} {currentTime}
-        </p>
+        <div>
+          <h1>
+            FooBar <span id="smiley">G</span>
+          </h1>
+        </div>
+        <div>
+          <p id="time">
+            {currentDay} {currentTime}
+          </p>
+          <select defaultValue={user.theme} onChange={changeTheme}>
+            {themes.map((theme, index) => (
+              <option value={theme} key={index}>
+                {theme}
+              </option>
+            ))}
+          </select>
+        </div>
       </header>
 
       <ProgressBar />
 
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
-          <Route path="/" exact render={(props) => <LandingPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <LandingPage
+                {...props}
+                pageTransition={pageTransition}
+                pageVariants={pageVariants}
+              />
+            )}
+          />
           <Route
             path="/beers"
-            render={(props) => <Beers {...props} pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />}
+            render={(props) => (
+              <Beers
+                {...props}
+                pageTransition={pageTransition}
+                pageVariants={pageVariants}
+                createBox={createBox}
+              />
+            )}
           />
           <Route
             path="/payment"
-            render={(props) => <FormPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />}
+            render={(props) => (
+              <FormPage
+                {...props}
+                pageTransition={pageTransition}
+                pageVariants={pageVariants}
+                createBox={createBox}
+              />
+            )}
           />
-          <Route path="/confirmation" render={(props) => <Confirmation {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
+          <Route
+            path="/confirmation"
+            render={(props) => (
+              <Confirmation
+                {...props}
+                pageTransition={pageTransition}
+                pageVariants={pageVariants}
+              />
+            )}
+          />
         </Switch>
       </AnimatePresence>
     </main>
