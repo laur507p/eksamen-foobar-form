@@ -4,7 +4,7 @@ import FormField from "./FormField";
 export default function Main() {
   return (
     <form className="form-container">
-      <h1>Customer information</h1>
+      <h2>Customer information</h2>
       <label>First Name</label>
       <FormField name="firstname" placeholder="First Name" type="text" id="firstname" />
       <label>Last name</label>
@@ -27,7 +27,7 @@ export default function Main() {
         <option value="table9">9</option>
         <option value="table10">10</option>
       </select>
-      <h1 className="payment-h1">Payment information</h1>
+      <h2 className="payment-h1">Payment information</h2>
       <label>Card number</label>
       <FormField name="cardnumber" placeholder="0000 0000 0000 0000" type="text" id="cardnumber" maxLength="16" />
 

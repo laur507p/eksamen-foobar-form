@@ -1,13 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Window from "../Window";
+import { Link } from "react-router-dom";
 
 export default function Confirmation(props) {
   return (
-    <motion.section style={{ position: "absolute" }} initial="initial" exit="out" animate="in" variants={props.pageVariants} transition={props.pageTransition} className="screen">
+    <motion.section
+      style={{ position: "absolute" }}
+      initial="initial"
+      exit="out"
+      animate="in"
+      variants={props.pageVariants}
+      transition={props.pageTransition}
+      className="screen"
+    >
       <Window />
-      <div className="window-container">
-        <h1>Confirmation</h1>
+      <div className="window-container confirmation-text">
+        <h1>
+          YOU'RE <br /> DONE
+        </h1>
+        <p className="confirmation-p">Sit tight, a waiter will bring your order over to your table! </p>
+        <Link to="/" className="confirm-button">
+          <h3>ORDER MORE BEER</h3>
+        </Link>
       </div>
     </motion.section>
   );
