@@ -17,12 +17,8 @@ $themes: (
       bottom-section: #1e00ff,
       bottom-section-txt: white,
       confirm-button: #1e00ff,
-<<<<<<< HEAD
-      theme-background-img: url("https://markusjorgensen.dk/80s-dream.jpg"),
-=======
       theme-background-img: url("https://markusjorgensen.dk/80s-dream.png"),
       price-color: #1e00ff,
->>>>>>> markus
     ),
   Vortex: (
     header-color: black,
@@ -41,37 +37,35 @@ $themes: (
     bottom-section: black,
     bottom-section-txt: white,
     confirm-button: #79ffa8,
-<<<<<<< HEAD
     theme-background-img: url("https://markusjorgensen.dk/vortex-01.png"),
   ),
-  Pastel-heaven: (
-    main-color: pink,
-    secondary-color: rgb(194, 228, 255),
-    light-color: white,
-    dark-color: #393939,
-    box-shadow: 10px 5px 0px red,
-=======
-    theme-background-img: url("https://markusjorgensen.dk/vortex.png"),
-    price-color: white,
-  ),
-  Pastel-heaven: (
-    header-color: #eeb4ff,
-    border-color: #eeb4ff,
-    text-color: #3b3b3b,
-    splash-color: #eeb4ff,
-    text-shadow: 4px 4px #ce24ff,
-    header-txt-color: #3b3b3b,
-    button-color: #3b3b3b,
-    form-button-color: #3b3b3b,
-    shadow-color: #ce24ff,
-    background-color: white,
-    overview-section: #ce24ff,
-    box-shadow: 10px 5px 0px #ce24ff,
-    bottom-section: #eeb4ff,
-    bottom-section-txt: #3b3b3b,
-    confirm-button: #eeb4ff,
-    theme-background-img: url("https://markusjorgensen.dk/pastel-heaven.png"),
-    price-color: #ce24ff,
->>>>>>> markus
-  )
+  // Pastel-heaven: (
+  //   main-color: pink,
+  //   secondary-color: rgb(194, 228, 255),
+  //   light-color: white,
+  //   dark-color: #393939,
+  //   box-shadow: 10px 5px 0px red,
+  //   theme-background-img: url("https://markusjorgensen.dk/vortex.png"),
+  //   price-color: white,
+  // ),
+  Pastel-heaven:
+    (
+      header-color: #eeb4ff,
+      border-color: #eeb4ff,
+      text-color: #3b3b3b,
+      splash-color: #eeb4ff,
+      text-shadow: 4px 4px #ce24ff,
+      header-txt-color: #3b3b3b,
+      button-color: #3b3b3b,
+      form-button-color: #3b3b3b,
+      shadow-color: #ce24ff,
+      background-color: white,
+      overview-section: #ce24ff,
+      box-shadow: 10px 5px 0px #ce24ff,
+      bottom-section: #eeb4ff,
+      bottom-section-txt: #3b3b3b,
+      confirm-button: #eeb4ff,
+      theme-background-img: url("https://markusjorgensen.dk/pastel-heaven.png"),
+      price-color: #ce24ff,
+    )
 );
