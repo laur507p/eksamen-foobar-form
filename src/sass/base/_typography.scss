@@ -52,7 +52,7 @@ label {
 .large_text h1 {
   @include theme-aware("text-shadow", "text-shadow");
   @include theme-aware("color", "splash-color");
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 .number,

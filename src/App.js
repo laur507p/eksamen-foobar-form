@@ -88,7 +88,7 @@ function App() {
         task(i);
       }
     } else {
-      for (let i = 0; i < 16; i++) {
+      for (let i = 0; i < 14; i++) {
         task(i);
       }
     }
@@ -100,7 +100,17 @@ function App() {
       box.classList.add("progressbox");
 
       document.getElementById("progressbar").appendChild(box);
-    }, 100 * i);
+    }, 50 * i);
+  }
+
+  function clearProgressBar() {
+    console.log("clearProgressBar");
+    document.getElementById("progressbar").innerHTML = "";
+  }
+
+  function showProgressbar() {
+    console.log("showProgressbar");
+    document.getElementById("navigation").classList.remove("hide");
   }
 
   return (
@@ -137,6 +147,7 @@ function App() {
                 {...props}
                 pageTransition={pageTransition}
                 pageVariants={pageVariants}
+                showProgressbar={showProgressbar}
               />
             )}
           />
@@ -169,6 +180,7 @@ function App() {
                 {...props}
                 pageTransition={pageTransition}
                 pageVariants={pageVariants}
+                clearProgressBar={clearProgressBar}
               />
             )}
           />

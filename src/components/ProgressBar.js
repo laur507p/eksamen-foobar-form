@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ProgressBar() {
   return (
-    <div className="navigation">
+    <div id="navigation" className="navigation hide">
       <div id="progressbar" className="progressbar"></div>
       <nav>
         <ul>

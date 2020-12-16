@@ -26,19 +26,6 @@ function BeersList(props) {
     setCart(tempCart);
   }, [taps]);
 
-  console.log("original taps", taps);
-  let set = new Set();
-  function uniqueTaps() {
-    console.log("uniqueTaps");
-    const unique = taps.map((tap) => {
-      set.add(tap.beer);
-      return set;
-    });
-    return unique[0];
-  }
-  const unique = uniqueTaps();
-  console.log("unique", unique);
-
   function filterAvailableTaps() {
     console.log("filterAvailableTaps");
 
@@ -49,21 +36,15 @@ function BeersList(props) {
     taps.forEach((tap) => {
       Beers.forEach((beer) => {
         if (tap.beer === beer.name) {
-          if (available.filter((item) => item.name === beer.name).length === 0) {
+          if (
+            available.filter((item) => item.name === beer.name).length === 0
+          ) {
             available.push(beer);
           }
         }
       });
     });
 
-    // const available = taps.map((tap) => {
-    //   // console.log("set", set);
-
-    //   const match = Beers.filter((beer) => beer.name === tap.beer);
-    //   console.log("match", match);
-
-    //   return match[0];
-    // });
     return available;
   }
   const available = filterAvailableTaps();
@@ -150,7 +131,8 @@ function BeersList(props) {
               <div className="li-text">
                 <div className="top-section">
                   <h3>
-                    {data.name} - <span className="beer-price">{data.price} DKK</span>
+                    {data.name} -{" "}
+                    <span className="beer-price">{data.price} DKK</span>
                   </h3>
                   {/* <p>{data.price}</p> */}
                 </div>
