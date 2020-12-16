@@ -1,42 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// get props to say what the progress status is???
-// function createBox() {
-//   console.log("createBox");
-//   for (let i = 0; i < 7; i++) {
-//     task(i);
-//   }
-// }
-// function task(i) {
-//   setTimeout(function () {
-//     console.log("task");
-//     const box = document.createElement("div");
-//     box.classList.add("progressbox");
-//     box.style.width = "15px";
-//     box.style.height = "15px";
-//     box.style.backgroundColor = "blue";
-//     document.getElementById("container").appendChild(box);
-//   }, 200 * i);
-// }
-
 export default function ProgressBar() {
   return (
     <div className="navigation">
-      <div className="progressbar">
-        <span id="container" className="progressbox_container"></span>
-        <span className="progressbox_overlay"></span>
-      </div>
+      <div id="progressbar" className="progressbar"></div>
       <nav>
         <ul>
           <li>
-            <Link to="/beers">Choose Beer/s</Link>
+            <Link to="/beers">1.Choose Beer/s</Link>
           </li>
           <li>
-            <Link to="/payment">Pay Up</Link>
+            <Link to="/payment">2.Pay Up</Link>
           </li>
           <li>
-            <Link to="/confirmation">You're done</Link>
+            <Link to="/confirmation">3.You're done</Link>
           </li>
         </ul>
       </nav>

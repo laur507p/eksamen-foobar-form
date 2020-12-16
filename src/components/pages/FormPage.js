@@ -28,7 +28,7 @@ export default function FormPage(props) {
       id="form"
     >
       <Window />
-      <div className="window-container">
+      <div class="window-container">
         <Form />
 
         {/* <button>Submit</button> */}
