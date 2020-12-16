@@ -28,12 +28,13 @@ export default function FormPage(props) {
       id="form"
     >
       <Window />
-      <div class="window-container">
+      <div className="window-container window-reset">
         <Form />
 
-        {/* <button>Submit</button> */}
-        <Link to="/confirmation" onClick={callFunctions}>
-          CONFIRM ORDER
+        <Link to="/confirmation" className="confirm-button" onClick={callFunctions}>
+          <button id="confirmbutton" type="submit">
+            CONFIRM ORDER
+          </button>
         </Link>
       </div>
     </motion.section>

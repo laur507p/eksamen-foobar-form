@@ -1,9 +1,16 @@
 @import "./sass/mixins";
 @import "./sass/color-palette";
 
+html {
+  height: 100%;
+}
+
 body {
   @include theme-aware("background-image", "theme-background-img");
+  background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100%;
+  background-position: 50% 50%;
 }
 
 .testbutton {
@@ -25,7 +32,8 @@ nav ul {
 .large_text {
   .confirm-button {
     position: fixed;
-    bottom: 5vh;
+    width: 90%;
+    bottom: 6%;
   }
   justify-content: center;
   display: flex;

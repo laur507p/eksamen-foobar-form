@@ -3,7 +3,7 @@
 
 .screen {
   li {
-    margin-bottom: 5vw;
+    margin-bottom: 25px;
     padding: 1rem;
     border-style: solid;
     @include theme-aware("border-color", "border-color");
@@ -45,6 +45,7 @@
       align-content: center;
       background: none;
       padding: 0 0.5rem;
+      transition: 0.3s;
     }
 
     @include theme-aware("border-color", "border-color");
@@ -90,7 +91,16 @@
 }
 
 .window-elements {
-  width: 35px;
+  width: 50px;
+  height: 20px;
+  margin-top: 3px;
+}
+
+// farve der kommer når man har en beer i sin cart
+.screen .add-remove-button .button-clicked {
+  @include theme-aware("background-color", "border-color");
+  transition: 0.3s;
+  @include theme-aware("color", "background-color");
 }
 
 .window-top {
@@ -109,6 +119,10 @@
   padding: 0.8rem;
   overflow: scroll;
   height: 65vh;
+}
+
+.window-reset {
+  height: 75vh;
 }
 
 @media only screen and (min-width: 600px) {

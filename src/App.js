@@ -14,6 +14,9 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   let date = new Date();
   let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
   let hours = date.getHours();
   let currentTime = hours + ":" + minutes;
   let day = date.getDay();
@@ -120,49 +123,16 @@ function App() {
 
       <AnimatePresence>
         <Switch location={location} key={location.pathname}>
-          <Route
-            path="/"
-            exact
-            render={(props) => (
-              <LandingPage
-                {...props}
-                pageTransition={pageTransition}
-                pageVariants={pageVariants}
-              />
-            )}
-          />
+          <Route path="/" exact render={(props) => <LandingPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
           <Route
             path="/beers"
-            render={(props) => (
-              <Beers
-                {...props}
-                pageTransition={pageTransition}
-                pageVariants={pageVariants}
-                createBox={createBox}
-              />
-            )}
+            render={(props) => <Beers {...props} pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />}
           />
           <Route
             path="/payment"
-            render={(props) => (
-              <FormPage
-                {...props}
-                pageTransition={pageTransition}
-                pageVariants={pageVariants}
-                createBox={createBox}
-              />
-            )}
+            render={(props) => <FormPage {...props} pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />}
           />
-          <Route
-            path="/confirmation"
-            render={(props) => (
-              <Confirmation
-                {...props}
-                pageTransition={pageTransition}
-                pageVariants={pageVariants}
-              />
-            )}
-          />
+          <Route path="/confirmation" render={(props) => <Confirmation {...props} pageTransition={pageTransition} pageVariants={pageVariants} />} />
         </Switch>
       </AnimatePresence>
     </main>

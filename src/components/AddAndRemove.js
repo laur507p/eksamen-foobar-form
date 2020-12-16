@@ -22,9 +22,13 @@ export default function AddAndRemove(props) {
 
   return (
     <div className="add-remove-button">
-      <button onClick={subtract}>-</button>
+      <button className={number > 0 ? "button-clicked" : ""} onClick={subtract}>
+        -
+      </button>
       <div className="number"> {number}</div>
-      <button onClick={add}>+</button>
+      <button className={number > 0 ? "button-clicked" : ""} onClick={add}>
+        +
+      </button>
     </div>
   );
 }
