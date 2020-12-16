@@ -143,7 +143,7 @@ function BeersList(props) {
       className="screen"
     >
       <Window />
-      <div class="window-container">
+      <div className="window-container">
         <h2>Beers</h2>
         <ul>
           {available.map((data) => (
