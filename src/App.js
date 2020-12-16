@@ -100,7 +100,12 @@ function App() {
       box.classList.add("progressbox");
 
       document.getElementById("progressbar").appendChild(box);
-    }, 100 * i);
+    }, 50 * i);
+  }
+
+  function clearProgressBar() {
+    console.log("clearProgressBar");
+    document.getElementById("progressbar").innerHTML = "";
   }
 
   return (
@@ -169,6 +174,7 @@ function App() {
                 {...props}
                 pageTransition={pageTransition}
                 pageVariants={pageVariants}
+                clearProgressBar={clearProgressBar}
               />
             )}
           />
