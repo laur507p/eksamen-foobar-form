@@ -7,15 +7,9 @@ export default function ProgressBar() {
       <div id="progressbar" className="progressbar"></div>
       <nav>
         <ul>
-          <li>
-            <Link to="/beers">1.Choose Beer/s</Link>
-          </li>
-          <li>
-            <Link to="/payment">2.Pay Up</Link>
-          </li>
-          <li>
-            <Link to="/confirmation">3.You're done</Link>
-          </li>
+          <li>1.Choose Beer/s</li>
+          <li>2.Pay Up</li>
+          <li>3.You're done!</li>
         </ul>
       </nav>
     </div>
