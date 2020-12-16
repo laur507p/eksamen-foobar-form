@@ -104,6 +104,16 @@
 }
 
 .window-top {
+  svg {
+    #Ellipse_5,
+    #Line_65,
+    #Line_66 {
+      @include theme-aware("stroke", "border-color");
+    }
+    width: 2.5rem;
+    margin-left: 1vw;
+  }
+
   @include theme-aware("border-color", "border-color");
   display: flex;
   width: 100%;

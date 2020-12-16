@@ -64,7 +64,7 @@ label {
 .beer-price {
   font-family: pt-mono;
   font-size: 0.9rem;
-  @include theme-aware("color", "header-color");
+  @include theme-aware("color", "price-color");
 }
 
 .form-button {
