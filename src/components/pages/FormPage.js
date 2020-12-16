@@ -31,8 +31,6 @@ export default function FormPage(props) {
       <div className="window-container window-reset">
         <Form />
 
-        {/* <button>Submit</button> */}
-
         <Link to="/confirmation" className="confirm-button" onClick={callFunctions}>
           <button id="confirmbutton" type="submit">
             CONFIRM ORDER
