@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "../Form";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -8,6 +8,12 @@ import { post } from "../../modules/rest";
 export default function FormPage(props) {
   // current order to submit with form!
   const currentCart = localStorage.getItem("currentCart");
+  //const [isFormValid, setIsFormValid] = useState(false);
+
+  // function formValid() {
+  //   const form = document.querySelector("form");
+  //   console.log(form.checkValidity());
+  // }
 
   const cartArray = JSON.parse(currentCart);
   console.log("cartArray", cartArray);
@@ -29,8 +35,11 @@ export default function FormPage(props) {
     >
       <Window />
       <div className="window-container window-reset">
-        <Form />
+        <form className="form-container">
+          <Form />
 
+          {/* <Link to="/confirmation" className={number > 0 ? "button-clicked" : ""} onClick={callFunctions}> */}
+        </form>
         <Link to="/confirmation" className="confirm-button" onClick={callFunctions}>
           <button id="confirmbutton" type="submit">
             CONFIRM ORDER

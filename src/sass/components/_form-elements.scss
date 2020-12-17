@@ -1,6 +1,9 @@
 @import "./sass/mixins";
 @import "./sass/color-palette";
 
+.disabled {
+  pointer-events: none;
+}
 .screen {
   li {
     margin-bottom: 25px;
