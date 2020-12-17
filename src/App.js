@@ -106,6 +106,7 @@ function App() {
   function clearProgressBar() {
     console.log("clearProgressBar");
     document.getElementById("progressbar").innerHTML = "";
+    document.getElementById("navigation").classList.add("hide");
   }
 
   function showProgressbar() {

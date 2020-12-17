@@ -15,7 +15,7 @@ input {
 input[type="text"] {
   appearance: none;
   -webkit-appearance: none;
-  padding: 16px;
+  padding: 16px 8px;
   @include theme-aware("background-color", "background-color");
   @include theme-aware("olor", "text-color");
   @include theme-aware("box-shadow", "box-shadow");
@@ -46,7 +46,7 @@ input[type="text"]:focus {
 #tablenumber {
   width: 20%;
   display: block;
-  padding: 16px;
+  padding: 10px;
   font-family: pt-mono, monospace;
   font-weight: 400;
   font-style: normal;

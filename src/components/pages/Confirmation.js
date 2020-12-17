@@ -17,7 +17,7 @@ export default function Confirmation(props) {
       <Window />
       <div className="window-container large_text">
         <h1>
-          YOU'RE <br /> DONE
+          YOU'RE <br /> DONE!
         </h1>
         <p className="confirmation-p">
           Sit tight, a waiter will bring your order over to your table!{" "}
