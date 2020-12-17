@@ -3,7 +3,7 @@ import FormField from "./FormField";
 
 export default function Main() {
   return (
-    <form className="form-container">
+    <>
       <h2>Customer information</h2>
       <label>First Name</label>
       <FormField name="firstname" placeholder="First Name" type="text" id="firstname" />
@@ -41,6 +41,6 @@ export default function Main() {
       </div>
       <label className="block">Name on card</label>
       <FormField name="fullname" placeholder="Name On Card" type="text" id="fullname" />
-    </form>
+    </>
   );
 }

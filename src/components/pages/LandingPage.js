@@ -22,11 +22,7 @@ export default function LandingPage(props) {
           <br />
           FOOBAR
         </h1>
-        <Link
-          to="/beers"
-          className="confirm-button"
-          onClick={props.showProgressbar}
-        >
+        <Link to="/beers" className="confirm-button" onClick={props.showProgressbar}>
           <h3>LET’S GET STARTED</h3>
         </Link>
       </div>

@@ -36,9 +36,7 @@ function BeersList(props) {
     taps.forEach((tap) => {
       Beers.forEach((beer) => {
         if (tap.beer === beer.name) {
-          if (
-            available.filter((item) => item.name === beer.name).length === 0
-          ) {
+          if (available.filter((item) => item.name === beer.name).length === 0) {
             available.push(beer);
           }
         }
@@ -131,8 +129,7 @@ function BeersList(props) {
               <div className="li-text">
                 <div className="top-section">
                   <h3>
-                    {data.name} -{" "}
-                    <span className="beer-price">{data.price} DKK</span>
+                    {data.name} - <span className="beer-price">{data.price} DKK</span>
                   </h3>
                   {/* <p>{data.price}</p> */}
                 </div>
