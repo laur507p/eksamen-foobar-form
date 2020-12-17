@@ -1,3 +1,4 @@
+// code found at https://codesandbox.io/s/react-theme-switcher-s76x8?file=/src/App.js
 @mixin theme-aware($key, $color) {
   @each $theme-name, $theme-color in $themes {
     .theme-#{$theme-name} & {
