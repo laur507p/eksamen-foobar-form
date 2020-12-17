@@ -144,6 +144,10 @@ function App() {
             exact
             render={() => <LandingPage pageTransition={pageTransition} pageVariants={pageVariants} showProgressbar={showProgressbar} />}
           />
+          {/* <Route path="/" exact component={LandingPage} />
+          <Route path="/beers" component={Beers} />
+          <Route path="/payment" component={FormPage} />
+          <Route path="/confirmation" component={Confirmation} /> */}
           <Route path="/beers" render={() => <Beers pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />} />
           <Route path="/payment" render={() => <FormPage pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />} />
           <Route
