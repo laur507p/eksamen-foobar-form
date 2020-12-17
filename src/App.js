@@ -18,6 +18,9 @@ function App() {
     minutes = "0" + minutes;
   }
   let hours = date.getHours();
+  if (hours < 10) {
+    hours = "0" + hours;
+  }
   let currentTime = hours + ":" + minutes;
   let day = date.getDay();
   let currentDay;
@@ -144,10 +147,6 @@ function App() {
             exact
             render={() => <LandingPage pageTransition={pageTransition} pageVariants={pageVariants} showProgressbar={showProgressbar} />}
           />
-          {/* <Route path="/" exact component={LandingPage} />
-          <Route path="/beers" component={Beers} />
-          <Route path="/payment" component={FormPage} />
-          <Route path="/confirmation" component={Confirmation} /> */}
           <Route path="/beers" render={() => <Beers pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />} />
           <Route path="/payment" render={() => <FormPage pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />} />
           <Route
