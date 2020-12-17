@@ -142,47 +142,13 @@ function App() {
           <Route
             path="/"
             exact
-            render={(props) => (
-              <LandingPage
-                {...props}
-                pageTransition={pageTransition}
-                pageVariants={pageVariants}
-                showProgressbar={showProgressbar}
-              />
-            )}
+            render={() => <LandingPage pageTransition={pageTransition} pageVariants={pageVariants} showProgressbar={showProgressbar} />}
           />
-          <Route
-            path="/beers"
-            render={(props) => (
-              <Beers
-                {...props}
-                pageTransition={pageTransition}
-                pageVariants={pageVariants}
-                createBox={createBox}
-              />
-            )}
-          />
-          <Route
-            path="/payment"
-            render={(props) => (
-              <FormPage
-                {...props}
-                pageTransition={pageTransition}
-                pageVariants={pageVariants}
-                createBox={createBox}
-              />
-            )}
-          />
+          <Route path="/beers" render={() => <Beers pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />} />
+          <Route path="/payment" render={() => <FormPage pageTransition={pageTransition} pageVariants={pageVariants} createBox={createBox} />} />
           <Route
             path="/confirmation"
-            render={(props) => (
-              <Confirmation
-                {...props}
-                pageTransition={pageTransition}
-                pageVariants={pageVariants}
-                clearProgressBar={clearProgressBar}
-              />
-            )}
+            render={() => <Confirmation pageTransition={pageTransition} pageVariants={pageVariants} clearProgressBar={clearProgressBar} />}
           />
         </Switch>
       </AnimatePresence>
