@@ -141,12 +141,42 @@
 .window-reset {
   height: 75vh;
 }
+
+.edit-order-button {
+  @include theme-aware("background-color", "border-color");
+  font-family: pt-mono;
+  font-size: 0.8rem;
+  padding: 25px 20px 20px 20px;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  top: -4vh;
+  right: -6vw;
+  text-align: center;
+  position: absolute;
+  @include theme-aware("color", "background-color");
+}
 @media only screen and (min-width: 520px) {
   .screen .add-remove-button button {
     padding: 0 0.5rem;
   }
   .screen .add-remove-button {
     width: 150px;
+  }
+
+  .edit-order-button {
+    @include theme-aware("background-color", "border-color");
+    font-family: pt-mono;
+    font-size: 1rem;
+    padding: 28px 20px 20px 20px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    top: -3vh;
+    right: -5vw;
+    text-align: center;
+    position: absolute;
+    @include theme-aware("color", "background-color");
   }
 }
 
@@ -166,5 +196,22 @@
 
   .window-container {
     padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .edit-order-button {
+    @include theme-aware("background-color", "border-color");
+    font-family: pt-mono;
+    font-size: 1rem;
+    padding: 28px 20px 20px 20px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    top: -5vh;
+    right: -3vw;
+    text-align: center;
+    position: absolute;
+    @include theme-aware("color", "background-color");
   }
 }

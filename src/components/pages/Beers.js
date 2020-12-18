@@ -51,14 +51,10 @@ function BeersList(props) {
   function addToCart(beer) {
     console.log("addToCart");
 
-    // console.log("tempCart ind i addToCart", tempCart);
     const nextCart = cart.map((item) => {
-      // console.log("item", item);
       if (item.name === beer) {
         console.log("fandt øl");
         item.amount = item.amount + 1;
-        // console.log("item", item);
-        // console.log("cart", cart);
       }
       return item;
     });

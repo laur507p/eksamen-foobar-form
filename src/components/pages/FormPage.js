@@ -35,6 +35,9 @@ export default function FormPage(props) {
     >
       <Window />
       <div className="window-container window-reset">
+        <Link className="edit-order-button" to="/beers">
+          EDIT ORDER
+        </Link>
         <form className="form-container">
           <Form />
 
